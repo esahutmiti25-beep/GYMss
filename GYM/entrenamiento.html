@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entrenamiento | Lunas Gym</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="pagina-entrenamiento">
+
+    <!-- ==========================================
+         ENCABEZADO
+    =========================================== -->
+
+    <header class="header-perfil">
+
+        <a href="perfil.html" class="logo-perfil">
+            LUNAS GYM
+        </a>
+
+        <a href="perfil.html" class="volver-perfil">
+            ← Volver al perfil
+        </a>
+
+    </header>
+
+
+    <main class="contenido-entrenamiento">
+
+        <!-- ==========================================
+             MIS RUTINAS
+        =========================================== -->
+
+        <section
+            class="seleccionar-entrenamiento"
+            id="pantallaSeleccion">
+
+            <p class="subtitulo-perfil">
+                ENTRENAMIENTO
+            </p>
+
+            <div class="encabezado-entrenamiento">
+
+                <div>
+
+                    <h1>Mis rutinas</h1>
+
+                    <p class="descripcion-entrenamiento">
+                        Crea y administra tus rutinas para
+                        comenzar un entrenamiento.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="boton-perfil"
+                    id="botonNuevaRutina">
+
+                    + Crear rutina
+
+                </button>
+
+            </div>
+
+
+            <!-- Lista de rutinas -->
+
+            <div
+                class="rutinas-entrenamiento"
+                id="rutinasEntrenamiento">
+            </div>
+
+
+            <!-- Estado vacío -->
+
+            <div
+                class="sin-rutinas-entrenamiento oculto"
+                id="sinRutinasEntrenamiento">
+
+                <h2>No tienes rutinas guardadas</h2>
+
+                <p>
+                    Crea tu primera rutina para comenzar
+                    a registrar tus entrenamientos.
+                </p>
+
+                <button
+                    type="button"
+                    class="boton-perfil"
+                    id="crearPrimeraRutina">
+
+                    + Crear primera rutina
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             ENTRENAMIENTO ACTIVO
+        =========================================== -->
+
+        <section
+            class="entrenamiento-activo oculto"
+            id="pantallaEntrenamiento">
+
+            <!-- Cabecera -->
+
+            <div class="cabecera-entrenamiento-activo">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        ENTRENAMIENTO ACTIVO
+                    </p>
+
+                    <h1 id="nombreEntrenamiento">
+                        Rutina
+                    </h1>
+
+                </div>
+
+
+                <div class="tiempo-entrenamiento">
+
+                    <span>TIEMPO</span>
+
+                    <strong id="cronometro">
+                        00:00:00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 DESCANSO
+            =========================================== -->
+
+            <div
+                class="temporizador-descanso oculto"
+                id="temporizadorDescanso">
+
+                <div class="info-descanso">
+
+                    <span>
+                        DESCANSO ENTRE SERIES
+                    </span>
+
+                    <strong id="tiempoDescanso">
+                        02:00
+                    </strong>
+
+                    <p id="estadoDescanso">
+                        Descansando...
+                    </p>
+
+                </div>
+
+
+                <div class="acciones-descanso">
+
+                    <button
+                        type="button"
+                        id="agregarTiempoDescanso">
+
+                        +30 s
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="reiniciarDescanso">
+
+                        Reiniciar
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="omitirDescanso">
+
+                        Omitir
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 EJERCICIOS
+            =========================================== -->
+
+            <div id="ejerciciosEntrenamiento">
+            </div>
+
+
+            <!-- ==========================================
+                 FINALIZAR / CANCELAR
+            =========================================== -->
+
+            <div class="acciones-entrenamiento">
+
+                <button
+                    type="button"
+                    class="boton-cancelar-entrenamiento"
+                    id="cancelarEntrenamiento">
+
+                    Cancelar entrenamiento
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="boton-finalizar"
+                    id="finalizarEntrenamiento">
+
+                    Finalizar entrenamiento
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         MODAL CREAR / EDITAR RUTINA
+    =========================================== -->
+
+    <div
+        class="modal-rutina oculto"
+        id="modalRutina">
+
+        <div class="modal-contenido">
+
+            <!-- Cabecera -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        RUTINA
+                    </p>
+
+                    <h2 id="tituloModalRutina">
+                        Crear rutina
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="cerrar-modal"
+                    id="cerrarModal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <!-- Nombre -->
+
+            <div class="campo-rutina">
+
+                <label for="nombreRutina">
+                    Nombre de la rutina
+                </label>
+
+                <input
+                    type="text"
+                    id="nombreRutina"
+                    placeholder="Ej. Push">
+
+            </div>
+
+
+            <!-- ==========================================
+                 DESCANSO PREDETERMINADO
+            =========================================== -->
+
+            <div class="campo-rutina">
+
+                <label for="descansoRutina">
+                    Descanso entre series
+                </label>
+
+                <select id="descansoRutina">
+
+                    <option value="60">
+                        1 minuto
+                    </option>
+
+                    <option value="90">
+                        1 minuto 30 segundos
+                    </option>
+
+                    <option value="120" selected>
+                        2 minutos
+                    </option>
+
+                    <option value="180">
+                        3 minutos
+                    </option>
+
+                    <option value="personalizado">
+                        Personalizado
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Descanso personalizado -->
+
+            <div
+                class="campo-rutina oculto"
+                id="contenedorDescansoPersonalizado">
+
+                <label for="descansoPersonalizado">
+                    Segundos de descanso
+                </label>
+
+                <input
+                    type="number"
+                    id="descansoPersonalizado"
+                    min="10"
+                    max="900"
+                    value="120">
+
+            </div>
+
+
+            <!-- ==========================================
+                 EJERCICIOS
+            =========================================== -->
+
+            <div class="titulo-ejercicios">
+
+                <div>
+
+                    <h3>Ejercicios</h3>
+
+                    <p>
+                        Agrega los ejercicios de esta rutina.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="agregar-serie"
+                    id="agregarEjercicio">
+
+                    + Agregar ejercicio
+
+                </button>
+
+            </div>
+
+
+            <div id="listaEjercicios">
+
+                <div class="ejercicio-rutina">
+
+                    <div class="campo-ejercicio nombre-ejercicio">
+
+                        <label>
+                            Ejercicio
+                        </label>
+
+                        <input
+                            type="text"
+                            class="nombreEjercicio"
+                            placeholder="Ej. Press banca">
+
+                    </div>
+
+
+                    <div class="campo-ejercicio">
+
+                        <label>
+                            Series
+                        </label>
+
+                        <input
+                            type="number"
+                            class="seriesEjercicio"
+                            value="3"
+                            min="1">
+
+                    </div>
+
+
+                    <div class="campo-ejercicio">
+
+                        <label>
+                            Repeticiones
+                        </label>
+
+                        <input
+                            type="number"
+                            class="repeticionesEjercicio"
+                            value="10"
+                            min="1">
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="eliminar-ejercicio">
+
+                        ×
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 BOTONES MODAL
+            =========================================== -->
+
+            <div class="acciones-rutina">
+
+                <button
+                    type="button"
+                    class="boton-cancelar"
+                    id="cancelarRutina">
+
+                    Cancelar
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="boton-perfil"
+                    id="guardarRutina">
+
+                    Guardar rutina
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Un solo JS controla toda la sección -->
+
+    <script src="js/entrenamiento.js"></script>
+
+</body>
+
+</html>

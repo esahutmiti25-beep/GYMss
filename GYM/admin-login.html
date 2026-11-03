@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acceso administrativo | Lunas Gym</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="pagina-admin-login">
+
+    <main class="contenedor-admin-login">
+
+        <div class="tarjeta-admin-login">
+
+            <div class="icono-admin">
+                ☾
+            </div>
+
+            <p class="etiqueta-admin">
+                ACCESO RESTRINGIDO
+            </p>
+
+            <h1>LUNAS GYM</h1>
+
+            <h2>Panel de administración</h2>
+
+            <p class="descripcion-admin">
+                Ingresa tus credenciales para acceder
+                al sistema administrativo.
+            </p>
+
+            <form id="formAdminLogin">
+
+                <div class="campo-admin">
+
+                    <label for="correoAdmin">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correoAdmin"
+                        name="correo"
+                        placeholder="admin@lunasgym.com"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo-admin">
+
+                    <label for="passwordAdmin">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="passwordAdmin"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+                <p
+                    id="mensajeAdminLogin"
+                    class="mensaje-admin-login"
+                    role="alert"
+                    aria-live="polite">
+                </p>
+
+                <button
+                    type="submit"
+                    class="boton-admin-login">
+
+                    Iniciar sesión
+
+                </button>
+
+            </form>
+
+            <a href="index.html" class="volver-inicio-admin">
+                ← Volver al inicio
+            </a>
+
+        </div>
+
+        <p class="copyright-admin">
+            © 2026 Lunas Gym · Administración
+        </p>
+
+    </main>
+
+    <script src="js/admin-login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Membresía | Lunas Gym</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="pagina-membresia">
+
+    <!-- ENCABEZADO -->
+
+    <header class="header-perfil">
+
+        <a href="perfil.html" class="logo-perfil">
+            LUNAS GYM
+        </a>
+
+        <a href="perfil.html" class="volver-perfil">
+            ← Volver al perfil
+        </a>
+
+    </header>
+
+    <main class="contenido-membresia">
+
+        <!-- TÍTULO -->
+
+        <section class="encabezado-membresia">
+
+            <p class="subtitulo-perfil">MI PLAN</p>
+
+            <h1>Mi membresía</h1>
+
+            <p>
+                Consulta tu plan actual, su vigencia
+                y el historial de movimientos.
+            </p>
+
+        </section>
+
+        <!-- MEMBRESÍA ACTUAL -->
+
+        <section class="membresia-actual">
+
+            <div class="cabecera-plan-actual">
+
+                <div>
+
+                    <span
+                        class="estado-plan"
+                        id="estadoPlanActual">
+                        ● SIN MEMBRESÍA
+                    </span>
+
+                    <h2 id="nombrePlanActual">
+                        Sin plan
+                    </h2>
+
+                    <p id="descripcionPlanActual">
+                        Selecciona un plan para comenzar.
+                    </p>
+
+                </div>
+
+                <div class="precio-plan-actual">
+
+                    <strong id="precioPlanActual">
+                        $0
+                    </strong>
+
+                    <span id="periodoPlanActual">
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="datos-plan">
+
+                <div>
+                    <span>Estado</span>
+                    <strong id="estadoMembresiaDato">
+                        Sin membresía
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Fecha de inicio</span>
+                    <strong id="fechaInicio">-</strong>
+                </div>
+
+                <div>
+                    <span>Fecha de vencimiento</span>
+                    <strong id="fechaRenovacion">-</strong>
+                </div>
+
+                <div>
+                    <span>Tiempo restante</span>
+                    <strong id="diasRestantes">-</strong>
+                </div>
+
+                <div>
+                    <span>Método de pago</span>
+                    <strong>Demostración</strong>
+                </div>
+
+            </div>
+
+            <div class="acciones-membresia">
+
+                <button
+                    type="button"
+                    id="botonRenovar"
+                    class="boton-renovar-membresia"
+                    hidden>
+                    Renovar membresía
+                </button>
+
+                <p id="mensajeMembresia" aria-live="polite"></p>
+
+            </div>
+
+        </section>
+
+        <!-- PLANES DISPONIBLES -->
+
+        <section class="seccion-planes">
+
+            <div class="titulo-planes">
+
+                <p class="subtitulo-perfil">PLANES</p>
+
+                <h2>Planes disponibles</h2>
+
+                <p>
+                    Selecciona el plan que mejor se adapte
+                    a tu entrenamiento.
+                </p>
+
+            </div>
+
+            <div class="planes-membresia">
+
+                <!-- VISITA -->
+
+                <article
+                    class="plan-membresia"
+                    data-plan="visita">
+
+                    <span class="tipo-plan">VISITA</span>
+
+                    <h3>Acceso por día</h3>
+
+                    <div class="precio-plan">$50</div>
+
+                    <p class="descripcion-plan">
+                        Ideal para entrenar un solo día
+                        sin contratar una membresía.
+                    </p>
+
+                    <ul>
+                        <li>✓ Acceso completo por un día</li>
+                        <li>✓ Área de pesas</li>
+                        <li>✓ Área de cardio</li>
+                        <li>✓ Uso de instalaciones</li>
+                    </ul>
+
+                    <button
+                        type="button"
+                        class="boton-elegir-plan">
+                        Elegir plan
+                    </button>
+
+                </article>
+
+                <!-- MENSUAL -->
+
+                <article
+                    class="plan-membresia plan-destacado"
+                    data-plan="mensual">
+
+                    <div class="recomendado">
+                        MÁS POPULAR
+                    </div>
+
+                    <span class="tipo-plan">MENSUAL</span>
+
+                    <h3>Plan mensual</h3>
+
+                    <div class="precio-plan">$400</div>
+
+                    <p class="descripcion-plan">
+                        Acceso completo al gimnasio
+                        durante todo el mes.
+                    </p>
+
+                    <ul>
+                        <li>✓ Acceso durante 30 días</li>
+                        <li>✓ Área de pesas</li>
+                        <li>✓ Área de cardio</li>
+                        <li>✓ Rutinas y seguimiento</li>
+                    </ul>
+
+                    <button
+                        type="button"
+                        class="boton-elegir-plan">
+                        Elegir plan
+                    </button>
+
+                </article>
+
+                <!-- TRIMESTRAL -->
+
+                <article
+                    class="plan-membresia"
+                    data-plan="trimestral">
+
+                    <span class="tipo-plan">TRIMESTRAL</span>
+
+                    <h3>Plan trimestral</h3>
+
+                    <div class="precio-plan">$1000</div>
+
+                    <p class="descripcion-plan">
+                        Tres meses de acceso con un
+                        precio especial.
+                    </p>
+
+                    <ul>
+                        <li>✓ Acceso durante 90 días</li>
+                        <li>✓ Área de pesas</li>
+                        <li>✓ Área de cardio</li>
+                        <li>✓ Rutinas y seguimiento</li>
+                    </ul>
+
+                    <button
+                        type="button"
+                        class="boton-elegir-plan">
+                        Elegir plan
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- HISTORIAL DE MOVIMIENTOS -->
+
+        <section class="seccion-historial-membresia">
+
+            <div class="titulo-planes">
+
+                <p class="subtitulo-perfil">ACTIVIDAD</p>
+
+                <h2>Historial de membresías</h2>
+
+                <p>
+                    Consulta tus activaciones, renovaciones
+                    y cambios de plan.
+                </p>
+
+            </div>
+
+            <div id="historialMembresias" class="lista-movimientos">
+
+                <p class="sin-movimientos">
+                    Todavía no tienes movimientos registrados.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- INFORMACIÓN -->
+
+        <section class="info-renovacion">
+
+            <div>
+
+                <h3>Información importante</h3>
+
+                <p>
+                    Esta sección es una demostración.
+                    Seleccionar o renovar un plan no genera
+                    ningún cobro real. Los pagos en línea
+                    se implementarán posteriormente.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/membresia.js"></script>
+
+</body>
+</html>

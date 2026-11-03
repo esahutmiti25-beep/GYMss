@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | Lunas Gym</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="pagina-perfil">
+
+    <header class="header-perfil">
+        <a href="index.html" class="logo-perfil">LUNAS GYM</a>
+
+        <div class="usuario-header">
+            <span id="nombreHeader">Usuario</span>
+            <div class="avatar" id="avatarUsuario">U</div>
+        </div>
+    </header>
+
+    <div class="panel-perfil">
+
+        <aside class="menu-perfil">
+            <nav>
+                <a href="#resumen" class="menu-activo">🏠 Inicio</a>
+                <a href="entrenamiento.html">🏋️ Entrenamiento</a>
+                <a href="progreso.html">📈 Progreso</a>
+                <a href="membresia.html">💳 Membresía</a>
+                <a href="ajustes.html">⚙️ Ajustes</a>
+            </nav>
+
+            <a href="index.html" class="cerrar-sesion">
+                Cerrar sesión
+            </a>
+        </aside>
+
+        <main class="contenido-perfil">
+
+            <!-- INICIO -->
+            <section id="resumen" class="seccion-perfil">
+
+                <p class="saludo">MI PERFIL</p>
+
+                <h1>
+                    Bienvenido,
+                    <span id="nombreBienvenida">Usuario</span>
+                </h1>
+
+                <p class="descripcion-perfil">
+                    Continúa trabajando para alcanzar tus objetivos.
+                </p>
+
+                <div class="resumen-perfil">
+
+                    <div class="tarjeta-resumen">
+                        <span>Entrenamientos</span>
+                        <strong id="resumenEntrenamientos">0</strong>
+                        <p>Registrados</p>
+                    </div>
+
+                    <div class="tarjeta-resumen">
+                        <span>Tiempo entrenado</span>
+                        <strong id="resumenTiempo">0 h</strong>
+                        <p>Tiempo acumulado</p>
+                    </div>
+
+                    <div class="tarjeta-resumen">
+                        <span>Rutinas</span>
+                        <strong id="resumenRutinas">0</strong>
+                        <p>Guardadas</p>
+                    </div>
+
+                    <div class="tarjeta-resumen">
+                        <span>Membresía</span>
+                        <strong id="resumenMembresia">SIN PLAN</strong>
+                        <p id="resumenPlan">Sin membresía</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- OBJETIVOS PERSONALES -->
+            <section id="objetivos" class="seccion-perfil seccion-objetivos">
+
+                <div class="encabezado-seccion-perfil">
+                    <div>
+                        <p class="subtitulo-perfil">MIS METAS</p>
+                        <h2>Objetivos personales</h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="editarObjetivos"
+                        class="boton-secundario">
+                        Editar objetivos
+                    </button>
+                </div>
+
+                <p class="descripcion-objetivos">
+                    Tu avance se actualiza automáticamente
+                    con los entrenamientos registrados.
+                </p>
+
+                <div class="objetivos-grid">
+
+                    <article class="tarjeta-objetivo">
+                        <span class="objetivo-etiqueta">
+                            FRECUENCIA SEMANAL
+                        </span>
+
+                        <h3>
+                            <span id="objetivoSemanalActual">0</span>
+                            /
+                            <span id="objetivoSemanalMeta">3</span>
+                            días
+                        </h3>
+
+                        <div class="barra-objetivo">
+                            <div
+                                id="barraObjetivoSemanal"
+                                class="relleno-objetivo">
+                            </div>
+                        </div>
+
+                        <p id="textoObjetivoSemanal">
+                            Días entrenados esta semana
+                        </p>
+                    </article>
+
+                    <article class="tarjeta-objetivo">
+                        <span class="objetivo-etiqueta">
+                            ENTRENAMIENTOS TOTALES
+                        </span>
+
+                        <h3>
+                            <span id="objetivoTotalActual">0</span>
+                            /
+                            <span id="objetivoTotalMeta">30</span>
+                        </h3>
+
+                        <div class="barra-objetivo">
+                            <div
+                                id="barraObjetivoTotal"
+                                class="relleno-objetivo">
+                            </div>
+                        </div>
+
+                        <p>
+                            Sesiones registradas en tu historial
+                        </p>
+                    </article>
+
+                    <article class="tarjeta-objetivo">
+                        <span class="objetivo-etiqueta">
+                            META DE FUERZA
+                        </span>
+
+                        <h3>
+                            <span id="objetivoFuerzaActual">0</span>
+                            /
+                            <span id="objetivoFuerzaMeta">100</span>
+                            kg
+                        </h3>
+
+                        <div class="barra-objetivo">
+                            <div
+                                id="barraObjetivoFuerza"
+                                class="relleno-objetivo">
+                            </div>
+                        </div>
+
+                        <p id="textoObjetivoFuerza">
+                            Press banca
+                        </p>
+                    </article>
+
+                </div>
+
+                <!-- FORMULARIO PARA EDITAR OBJETIVOS -->
+                <form id="formObjetivos" class="form-objetivos" hidden>
+
+                    <h3>Configurar objetivos</h3>
+
+                    <div class="campos-objetivos">
+
+                        <label>
+                            Días por semana
+                            <input
+                                type="number"
+                                id="metaSemanal"
+                                min="1"
+                                max="7"
+                                step="1"
+                                required>
+                        </label>
+
+                        <label>
+                            Entrenamientos totales
+                            <input
+                                type="number"
+                                id="metaTotal"
+                                min="1"
+                                max="100000"
+                                step="1"
+                                required>
+                        </label>
+
+                        <label>
+                            Ejercicio de fuerza
+                            <input
+                                type="text"
+                                id="metaEjercicio"
+                                placeholder="Ej. Press banca"
+                                maxlength="100"
+                                required>
+                        </label>
+
+                        <label>
+                            Peso objetivo (kg)
+                            <input
+                                type="number"
+                                id="metaPeso"
+                                min="0.5"
+                                max="10000"
+                                step="0.5"
+                                required>
+                        </label>
+
+                    </div>
+
+                    <p
+                        id="mensajeObjetivos"
+                        role="alert"
+                        aria-live="polite">
+                    </p>
+
+                    <div class="acciones-objetivos">
+
+                        <button
+                            type="button"
+                            id="cancelarObjetivos"
+                            class="boton-secundario">
+                            Cancelar
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="boton-perfil">
+                            Guardar objetivos
+                        </button>
+
+                    </div>
+                </form>
+            </section>
+
+            <!-- RUTINAS GUARDADAS -->
+            <section id="rutinas" class="seccion-perfil">
+
+                <div class="encabezado-seccion-perfil">
+                    <div>
+                        <p class="subtitulo-perfil">MIS RUTINAS</p>
+                        <h2>Rutinas guardadas</h2>
+                    </div>
+                </div>
+
+                <div
+                    id="rutinasPerfil"
+                    class="contenedor-rutinas">
+                </div>
+
+            </section>
+
+            <!-- ENTRENAMIENTOS RECIENTES -->
+            <section id="historial" class="seccion-perfil">
+
+                <div class="encabezado-seccion-perfil">
+                    <div>
+                        <p class="subtitulo-perfil">ACTIVIDAD</p>
+                        <h2>Entrenamientos recientes</h2>
+                    </div>
+                </div>
+
+                <div
+                    id="entrenamientosRecientes"
+                    class="historial-entrenamientos">
+                </div>
+
+                <div class="ver-historial-completo">
+                    <a href="progreso.html" class="boton-secundario">
+                        Ver historial completo
+                    </a>
+                </div>
+
+            </section>
+
+            <!-- PROGRESO -->
+            <section id="progreso" class="seccion-perfil">
+
+                <div class="encabezado-seccion-perfil">
+                    <div>
+                        <p class="subtitulo-perfil">ESTADÍSTICAS</p>
+                        <h2>Mi progreso</h2>
+                    </div>
+                </div>
+
+                <div class="progreso-grid">
+
+                    <div class="tarjeta-progreso">
+                        <p>Entrenamientos</p>
+                        <h3 id="progresoEntrenamientosPerfil">0</h3>
+                        <span>Total registrados</span>
+                    </div>
+
+                    <div class="tarjeta-progreso">
+                        <p>Series completadas</p>
+                        <h3 id="progresoSeriesPerfil">0</h3>
+                        <span>Total realizadas</span>
+                    </div>
+
+                    <div class="tarjeta-progreso">
+                        <p>Volumen acumulado</p>
+                        <h3 id="progresoVolumenPerfil">0 kg</h3>
+                        <span>Peso × repeticiones</span>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- MEMBRESÍA -->
+            <section id="membresia" class="seccion-perfil">
+
+                <div class="encabezado-seccion-perfil">
+                    <div>
+                        <p class="subtitulo-perfil">MI PLAN</p>
+                        <h2>Membresía</h2>
+                    </div>
+                </div>
+
+                <div class="tarjeta-membresia-perfil">
+
+                    <div>
+                        <span
+                            class="estado-membresia"
+                            id="estadoMembresiaPerfil">
+                            ● SIN MEMBRESÍA
+                        </span>
+
+                        <h3 id="planMembresiaPerfil">Sin plan</h3>
+
+                        <p id="descripcionMembresiaPerfil">
+                            Selecciona una membresía para comenzar.
+                        </p>
+                    </div>
+
+                    <div class="datos-membresia">
+
+                        <div>
+                            <span>Próxima renovación</span>
+                            <strong id="renovacionMembresiaPerfil">-</strong>
+                        </div>
+
+                        <div>
+                            <span>Precio</span>
+                            <strong id="precioMembresiaPerfil">$0</strong>
+                        </div>
+
+                    </div>
+
+                    <a href="membresia.html" class="boton-secundario">
+                        Administrar membresía
+                    </a>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/perfil.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Progreso | Lunas Gym</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="pagina-progreso">
+
+    <!-- ENCABEZADO -->
+
+    <header class="header-perfil">
+
+        <a href="perfil.html" class="logo-perfil">
+            LUNAS GYM
+        </a>
+
+        <a href="perfil.html" class="volver-perfil">
+            ← Volver al perfil
+        </a>
+
+    </header>
+
+
+    <main class="contenido-progreso">
+
+        <!-- TÍTULO -->
+
+        <section class="encabezado-progreso">
+
+            <p class="subtitulo-perfil">
+                ESTADÍSTICAS
+            </p>
+
+            <h1>Mi progreso</h1>
+
+            <p>
+                Analiza tu actividad, tus récords y la evolución
+                de tus entrenamientos.
+            </p>
+
+        </section>
+
+
+        <!-- ESTADÍSTICAS GENERALES -->
+
+        <section class="resumen-progreso">
+
+            <div class="estadistica-progreso">
+
+                <span>Entrenamientos</span>
+
+                <strong id="progresoEntrenamientos">
+                    0
+                </strong>
+
+                <p>Total registrados</p>
+
+            </div>
+
+
+            <div class="estadistica-progreso">
+
+                <span>Tiempo entrenado</span>
+
+                <strong id="progresoTiempo">
+                    0 h
+                </strong>
+
+                <p>Tiempo acumulado</p>
+
+            </div>
+
+
+            <div class="estadistica-progreso">
+
+                <span>Series completadas</span>
+
+                <strong id="progresoSeries">
+                    0
+                </strong>
+
+                <p>Total realizadas</p>
+
+            </div>
+
+
+            <div class="estadistica-progreso">
+
+                <span>Volumen total</span>
+
+                <strong id="progresoVolumen">
+                    0 kg
+                </strong>
+
+                <p>Peso × repeticiones</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             PROGRESO POR EJERCICIO
+        =========================================== -->
+
+        <section class="bloque-progreso">
+
+            <div class="titulo-bloque-progreso">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        EVOLUCIÓN
+                    </p>
+
+                    <h2>Progreso por ejercicio</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="selector-ejercicio">
+
+                <label for="seleccionarEjercicio">
+                    Ejercicio
+                </label>
+
+                <select id="seleccionarEjercicio">
+
+                    <option value="">
+                        Selecciona un ejercicio
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SIN DATOS -->
+
+            <div
+                class="sin-progreso oculto"
+                id="sinProgreso">
+
+                <h3>
+                    Todavía no hay datos de progreso
+                </h3>
+
+                <p>
+                    Completa entrenamientos y registra tus series
+                    para comenzar a visualizar tu evolución.
+                </p>
+
+            </div>
+
+
+            <!-- DETALLE -->
+
+            <div
+                class="detalle-progreso-ejercicio oculto"
+                id="detalleProgresoEjercicio">
+
+                <!-- RESUMEN -->
+
+                <div class="resumen-ejercicio-progreso">
+
+                    <div>
+
+                        <span>Mejor peso</span>
+
+                        <strong id="mejorPeso">
+                            0 kg
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Mejor volumen</span>
+
+                        <strong id="mejorVolumenEjercicio">
+                            0 kg
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>Veces entrenado</span>
+
+                        <strong id="vecesEntrenado">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GRÁFICA -->
+
+                <div class="contenedor-grafica-progreso">
+
+                    <div class="encabezado-grafica">
+
+                        <div>
+
+                            <span>
+                                EVOLUCIÓN
+                            </span>
+
+                            <h3>
+                                Mejor peso por entrenamiento
+                            </h3>
+
+                        </div>
+
+                        <strong id="nombreEjercicioGrafica">
+                            Ejercicio
+                        </strong>
+
+                    </div>
+
+
+                    <div class="grafica-scroll">
+
+                        <canvas
+                            id="graficaProgreso"
+                            width="900"
+                            height="360">
+                        </canvas>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLA -->
+
+                <div class="tabla-progreso">
+
+                    <div class="cabecera-tabla-progreso">
+
+                        <span>Fecha</span>
+
+                        <span>Mejor peso</span>
+
+                        <span>Volumen</span>
+
+                        <span>Series</span>
+
+                    </div>
+
+
+                    <div id="historialEjercicio">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             RÉCORDS
+        =========================================== -->
+
+        <section class="bloque-progreso">
+
+            <div class="titulo-bloque-progreso">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        FUERZA
+                    </p>
+
+                    <h2>Récords por ejercicio</h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="records-grid"
+                id="recordsEjercicios">
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             HISTORIAL COMPLETO
+        =========================================== -->
+
+        <section class="bloque-progreso">
+
+            <div class="titulo-bloque-progreso">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        ACTIVIDAD
+                    </p>
+
+                    <h2>Historial de entrenamientos</h2>
+
+                    <p>
+                        Consulta todos los entrenamientos
+                        que has registrado.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div id="listaHistorial">
+            </div>
+
+
+            <!-- HISTORIAL VACÍO -->
+
+            <div
+                class="historial-vacio oculto"
+                id="historialVacio">
+
+                <div class="icono-historial">
+                    🏋️
+                </div>
+
+                <h2>
+                    Todavía no tienes entrenamientos
+                </h2>
+
+                <p>
+                    Cuando completes tu primer entrenamiento,
+                    aparecerá aquí con sus ejercicios,
+                    series y resultados.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         MODAL DETALLE ENTRENAMIENTO
+    =========================================== -->
+
+    <div
+        class="modal-historial oculto"
+        id="modalHistorial">
+
+        <div class="modal-historial-contenido">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        ENTRENAMIENTO
+                    </p>
+
+                    <h2 id="modalNombre">
+                        Rutina
+                    </h2>
+
+                    <p
+                        class="fecha-modal"
+                        id="modalFecha">
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="cerrar-modal"
+                    id="cerrarHistorial">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="resumen-modal-entrenamiento"
+                id="resumenModal">
+            </div>
+
+
+            <div id="detalleEjercicios">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/progreso.js"></script>
+
+</body>
+
+</html>

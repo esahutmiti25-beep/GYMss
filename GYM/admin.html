@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administración | Lunas Gym</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+
+    <!-- Comprobación temprana de sesión de demostración -->
+    <script>
+        if (sessionStorage.getItem("adminSesion") !== "activa") {
+            window.location.replace("admin-login.html");
+        }
+    </script>
+</head>
+
+<body class="pagina-admin">
+
+    <div class="admin-layout">
+
+        <!-- MENÚ LATERAL -->
+
+        <aside class="admin-sidebar">
+
+            <a href="admin.html" class="admin-marca">
+                <span class="admin-marca-icono">☾</span>
+                <span>LUNAS GYM</span>
+            </a>
+
+            <p class="admin-menu-etiqueta">ADMINISTRACIÓN</p>
+
+            <nav class="admin-navegacion" aria-label="Menú administrativo">
+
+                <button
+                    type="button"
+                    class="admin-nav-item activo"
+                    data-seccion="dashboard">
+                    <span>▦</span>
+                    Dashboard
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-nav-item"
+                    data-seccion="usuarios">
+                    <span>♙</span>
+                    Usuarios
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-nav-item"
+                    data-seccion="membresias">
+                    <span>▤</span>
+                    Membresías
+                </button>
+
+            </nav>
+
+            <div class="admin-sidebar-footer">
+
+                <button
+                    type="button"
+                    id="cerrarSesionAdmin"
+                    class="admin-salir">
+                    ← Cerrar sesión
+                </button>
+
+            </div>
+
+        </aside>
+
+        <!-- CONTENIDO -->
+
+        <div class="admin-principal">
+
+            <header class="admin-header">
+
+                <div>
+                    <p class="admin-header-etiqueta">PANEL DE CONTROL</p>
+                    <h1 id="tituloSeccionAdmin">Dashboard</h1>
+                </div>
+
+                <div class="admin-identidad">
+                    <span class="admin-avatar">A</span>
+
+                    <div>
+                        <strong>Administrador</strong>
+                        <small>Lunas Gym</small>
+                    </div>
+                </div>
+
+            </header>
+
+            <main class="admin-contenido">
+
+                <!-- DASHBOARD -->
+
+                <section
+                    id="seccionDashboard"
+                    class="admin-seccion">
+
+                    <div class="admin-bienvenida">
+
+                        <p>RESUMEN GENERAL</p>
+
+                        <h2>Bienvenido al panel de administración</h2>
+
+                        <span>
+                            Consulta la información general del gimnasio
+                            desde un solo lugar.
+                        </span>
+
+                    </div>
+
+                    <div class="admin-estadisticas">
+
+                        <article class="admin-estadistica">
+
+                            <div class="admin-estadistica-superior">
+                                <span>USUARIOS REGISTRADOS</span>
+                                <span class="admin-estadistica-icono">♙</span>
+                            </div>
+
+                            <strong id="totalUsuariosAdmin">0</strong>
+
+                            <p>Total de cuentas creadas</p>
+
+                        </article>
+
+                        <article class="admin-estadistica">
+
+                            <div class="admin-estadistica-superior">
+                                <span>MEMBRESÍAS ACTIVAS</span>
+                                <span class="admin-estadistica-icono">✓</span>
+                            </div>
+
+                            <strong id="membresiasActivasAdmin">0</strong>
+
+                            <p>Miembros con acceso activo</p>
+
+                        </article>
+
+                    </div>
+
+                    <div class="admin-panel">
+
+                        <div class="admin-panel-encabezado">
+
+                            <div>
+                                <p class="admin-subtitulo">ACTIVIDAD</p>
+                                <h2>Usuarios recientes</h2>
+                            </div>
+
+                            <button
+                                type="button"
+                                class="admin-boton-secundario"
+                                id="verTodosUsuarios">
+                                Ver todos
+                            </button>
+
+                        </div>
+
+                        <div class="admin-tabla-scroll">
+
+                            <table class="admin-tabla">
+
+                                <thead>
+                                    <tr>
+                                        <th>Usuario</th>
+                                        <th>Correo</th>
+                                        <th>Fecha de registro</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="tablaUsuariosRecientes"></tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- USUARIOS -->
+
+                <section
+                    id="seccionUsuarios"
+                    class="admin-seccion oculto">
+
+                    <div class="admin-panel">
+
+                        <div class="admin-panel-encabezado">
+
+                            <div>
+                                <p class="admin-subtitulo">CUENTAS</p>
+                                <h2>Usuarios registrados</h2>
+                                <p>
+                                    Consulta las cuentas de los miembros
+                                    del gimnasio.
+                                </p>
+                            </div>
+
+                            <div class="admin-buscador">
+
+                                <input
+                                    type="search"
+                                    id="buscarUsuarioAdmin"
+                                    placeholder="Buscar usuario..."
+                                    aria-label="Buscar usuario">
+
+                            </div>
+
+                        </div>
+
+                        <div class="admin-tabla-scroll">
+
+                            <table class="admin-tabla">
+
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Fecha de registro</th>
+                                        <th>Membresía</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="tablaUsuariosAdmin"></tbody>
+
+                            </table>
+
+                        </div>
+
+                        <p
+                            id="mensajeUsuariosAdmin"
+                            class="admin-mensaje-tabla oculto">
+                            No se encontraron usuarios.
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- MEMBRESÍAS -->
+
+                <section
+                    id="seccionMembresias"
+                    class="admin-seccion oculto">
+
+                    <div class="admin-panel">
+
+                        <div class="admin-panel-encabezado">
+
+                            <div>
+                                <p class="admin-subtitulo">CONTROL DE ACCESO</p>
+                                <h2>Gestión de membresías</h2>
+                                <p>
+                                    Consulta los planes y modifica
+                                    el estado de las membresías.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="admin-tabla-scroll">
+
+                            <table class="admin-tabla">
+
+                                <thead>
+                                    <tr>
+                                        <th>Usuario</th>
+                                        <th>Plan</th>
+                                        <th>Vencimiento</th>
+                                        <th>Estado</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="tablaMembresiasAdmin"></tbody>
+
+                            </table>
+
+                        </div>
+
+                        <p
+                            id="mensajeMembresiasAdmin"
+                            class="admin-mensaje-tabla oculto">
+                            No hay membresías registradas.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="admin-footer">
+                © 2026 Lunas Gym · Panel administrativo
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="js/admin.js"></script>
+
+</body>
+</html>

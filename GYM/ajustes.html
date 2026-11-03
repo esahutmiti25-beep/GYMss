@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ajustes | Lunas Gym</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="pagina-ajustes">
+
+    <!-- Encabezado -->
+
+    <header class="header-perfil">
+
+        <a href="perfil.html" class="logo-perfil">
+            LUNAS GYM
+        </a>
+
+        <a href="perfil.html" class="volver-perfil">
+            ← Volver al perfil
+        </a>
+
+    </header>
+
+
+    <main class="contenido-ajustes">
+
+        <!-- Título -->
+
+        <section class="encabezado-ajustes">
+
+            <p class="subtitulo-perfil">
+                MI CUENTA
+            </p>
+
+            <h1>Ajustes</h1>
+
+            <p>
+                Administra tu información personal
+                y las opciones de tu cuenta.
+            </p>
+
+        </section>
+
+
+        <!-- Perfil -->
+
+        <section class="bloque-ajustes">
+
+            <div class="titulo-ajustes">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        PERFIL
+                    </p>
+
+                    <h2>Información personal</h2>
+
+                    <p>
+                        Actualiza los datos asociados
+                        a tu cuenta.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form
+                class="formulario-ajustes"
+                id="formularioPerfil">
+
+                <div class="campo-ajustes">
+
+                    <label for="nombreUsuario">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombreUsuario"
+                        placeholder="Tu nombre"
+                        required>
+
+                </div>
+
+
+                <div class="campo-ajustes">
+
+                    <label for="correoUsuario">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correoUsuario"
+                        placeholder="correo@ejemplo.com"
+                        required>
+
+                </div>
+
+
+                <div class="campo-ajustes">
+
+                    <label for="telefonoUsuario">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefonoUsuario"
+                        placeholder="441 123 4567">
+
+                </div>
+
+
+                <div class="acciones-ajustes">
+
+                    <button
+                        type="submit"
+                        class="boton-perfil">
+
+                        Guardar cambios
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Seguridad -->
+
+        <section class="bloque-ajustes">
+
+            <div class="titulo-ajustes">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        SEGURIDAD
+                    </p>
+
+                    <h2>Cambiar contraseña</h2>
+
+                    <p>
+                        Actualiza la contraseña
+                        utilizada para acceder a tu cuenta.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form
+                class="formulario-ajustes"
+                id="formularioContrasena">
+
+                <div class="campo-ajustes">
+
+                    <label for="contrasenaActual">
+                        Contraseña actual
+                    </label>
+
+                    <input
+                        type="password"
+                        id="contrasenaActual"
+                        placeholder="Contraseña actual"
+                        required>
+
+                </div>
+
+
+                <div class="campo-ajustes">
+
+                    <label for="nuevaContrasena">
+                        Nueva contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="nuevaContrasena"
+                        placeholder="Nueva contraseña"
+                        required>
+
+                </div>
+
+
+                <div class="campo-ajustes">
+
+                    <label for="confirmarContrasena">
+                        Confirmar nueva contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmarContrasena"
+                        placeholder="Repite la contraseña"
+                        required>
+
+                </div>
+
+
+                <div class="acciones-ajustes">
+
+                    <button
+                        type="submit"
+                        class="boton-secundario boton-formulario">
+
+                        Cambiar contraseña
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Preferencias -->
+
+        <section class="bloque-ajustes">
+
+            <div class="titulo-ajustes">
+
+                <div>
+
+                    <p class="subtitulo-perfil">
+                        PREFERENCIAS
+                    </p>
+
+                    <h2>Configuración</h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="lista-preferencias">
+
+                <div class="preferencia">
+
+                    <div>
+
+                        <h3>
+                            Recordatorios de entrenamiento
+                        </h3>
+
+                        <p>
+                            Recibir recordatorios relacionados
+                            con tus entrenamientos.
+                        </p>
+
+                    </div>
+
+
+                    <label class="interruptor">
+
+                        <input
+                            type="checkbox"
+                            id="recordatorios"
+                            checked>
+
+                        <span class="deslizador"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="preferencia">
+
+                    <div>
+
+                        <h3>
+                            Mostrar estadísticas
+                        </h3>
+
+                        <p>
+                            Mostrar información de progreso
+                            y estadísticas en tu perfil.
+                        </p>
+
+                    </div>
+
+
+                    <label class="interruptor">
+
+                        <input
+                            type="checkbox"
+                            id="mostrarEstadisticas"
+                            checked>
+
+                        <span class="deslizador"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Sesión -->
+
+        <section class="bloque-ajustes zona-sesion">
+
+            <div>
+
+                <p class="subtitulo-perfil">
+                    SESIÓN
+                </p>
+
+                <h2>Cerrar sesión</h2>
+
+                <p>
+                    Sal de tu cuenta de Lunas Gym
+                    en este dispositivo.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="boton-cerrar-sesion"
+                id="botonCerrarSesion">
+
+                Cerrar sesión
+
+            </button>
+
+        </section>
+
+
+        <!-- Zona de peligro -->
+
+        <section class="bloque-ajustes zona-peligro">
+
+            <div>
+
+                <p class="subtitulo-peligro">
+                    ZONA DE PELIGRO
+                </p>
+
+                <h2>Eliminar cuenta</h2>
+
+                <p>
+                    Esta acción eliminará los datos guardados
+                    localmente de tu cuenta, rutinas,
+                    entrenamientos y membresía.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="boton-eliminar-cuenta"
+                id="eliminarCuenta">
+
+                Eliminar cuenta
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/ajustes.js"></script>
+
+</body>
+
+</html>
